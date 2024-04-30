@@ -1,5 +1,11 @@
 package day2.pattern;
 
+// *
+// **
+// ***
+// ****
+// *****
+
 public class ClassP4 {
 
 	public static void main(String[] args) {

@@ -1,5 +1,11 @@
 package day2.pattern;
 
+// 5
+// 54
+// 543
+// 5432
+// 54321
+
 public class ClassP9 {
 
 	public static void main(String[] args) {
