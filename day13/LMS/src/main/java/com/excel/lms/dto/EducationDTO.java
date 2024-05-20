@@ -18,6 +18,8 @@ public class EducationDTO {
 
     private String eduId;
 
+	private String employeeId;
+
 	private EducationType educationType;
 	
 	private Double percentage;
@@ -31,4 +33,6 @@ public class EducationDTO {
 	private String specialization;
 
 	private LocalDate yearOfPassing;
+
+
 }

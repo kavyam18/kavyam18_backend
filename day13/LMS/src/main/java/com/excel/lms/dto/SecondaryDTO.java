@@ -2,7 +2,6 @@ package com.excel.lms.dto;
 
 import com.excel.lms.enums.MartialStatus;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +16,8 @@ import lombok.Setter;
 public class SecondaryDTO {
 
     private String secondId;
+    
+	private String employeeId;
 	
 	private String panNo;
 	
@@ -31,4 +32,5 @@ public class SecondaryDTO {
 	private String passPortNo;
 
 	private MartialStatus martialStatus;
+
 }

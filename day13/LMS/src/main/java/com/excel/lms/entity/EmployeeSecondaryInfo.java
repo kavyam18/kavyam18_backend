@@ -1,7 +1,5 @@
 package com.excel.lms.entity;
 
-import java.time.LocalDate;
-
 import com.excel.lms.enums.MartialStatus;
 
 import jakarta.persistence.CascadeType;
@@ -16,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,12 +24,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "employee_secondary_info")
 public class EmployeeSecondaryInfo {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String secondId;
+	private Integer secondId;
 	
 	@Column(name = "panNo",length = 6,nullable = true)
 	private String panNo;
@@ -55,4 +55,6 @@ public class EmployeeSecondaryInfo {
 	
 	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private EmployeePrimaryInfo employeePrimaryInfo;
+
+	
 }

@@ -1,7 +1,5 @@
 package com.excel.lms.entity;
 
-import java.time.LocalDate;
-
 import com.excel.lms.enums.AddressType;
 
 import jakarta.persistence.CascadeType;
@@ -16,6 +14,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -25,12 +24,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "employee_address_info")
 public class EmployeeAddressDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String addressId;
+	private Integer addressId;
 	
 	@Enumerated(EnumType.STRING)
 	private AddressType addressType;

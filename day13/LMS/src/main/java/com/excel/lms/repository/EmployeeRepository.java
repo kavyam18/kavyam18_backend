@@ -7,8 +7,9 @@ import com.excel.lms.entity.EmployeePrimaryInfo;
 import java.util.Optional;
 
 
-public interface EmployeeRepository extends JpaRepository<EmployeePrimaryInfo, String> {
-	
-    Optional<EmployeePrimaryInfo> findByPrimaryId(String primaryId);
+public interface EmployeeRepository extends JpaRepository<EmployeePrimaryInfo, Integer> {
+
+
+	Optional<EmployeePrimaryInfo> findByEmployeeId(String employeeId);
 	
 }

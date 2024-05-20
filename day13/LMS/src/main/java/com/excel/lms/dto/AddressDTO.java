@@ -2,7 +2,6 @@ package com.excel.lms.dto;
 
 import com.excel.lms.enums.AddressType;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +16,8 @@ import lombok.Setter;
 public class AddressDTO {
 
     private String addressId;
+
+	private String employeeId;
 
 	private AddressType addressType;
 	

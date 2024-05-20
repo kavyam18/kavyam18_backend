@@ -10,7 +10,7 @@ import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -29,7 +29,7 @@ public class EmployeeBankDetails {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String bankId;
+	private Integer bankId;
 	
 	@Column(name = "accountNo",length = 15,unique = true)
 	private Integer accountNo;
@@ -49,6 +49,8 @@ public class EmployeeBankDetails {
 	@Column(name = "state")
 	private String state;
 	
-	@ManyToOne(fetch = FetchType.EAGER)
- private EmployeePrimaryInfo employeePrimaryInfo;
+	@OneToOne(fetch = FetchType.LAZY)
+    private EmployeePrimaryInfo employeePrimaryInfo;
+
+	
 }

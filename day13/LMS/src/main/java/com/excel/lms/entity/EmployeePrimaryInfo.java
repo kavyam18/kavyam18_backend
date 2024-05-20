@@ -3,7 +3,6 @@ package com.excel.lms.entity;
 import java.time.LocalDate;
 import java.util.List;
 
-import com.excel.lms.dto.PrimaryDTO.PrimaryDTOBuilder;
 import com.excel.lms.enums.Designation;
 import com.excel.lms.enums.EmployeeStatus;
 import com.excel.lms.enums.Gender;
@@ -39,7 +38,10 @@ public class EmployeePrimaryInfo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String primaryId;
+	private Integer primaryId;
+	
+	private String employeeId;
+	
 	
 	@Column(name = "name")
 	private String employeeName;
@@ -71,19 +73,19 @@ public class EmployeePrimaryInfo {
 	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY, mappedBy = "employeePrimaryInfo" )
 	private List<EmployeeAddressDetails > employeeAddressDetails;
 
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "employeePrimaryInfo")
-	private List<EmployeeBankDetails> employeeBankDetails;
+	@OneToOne(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "employeePrimaryInfo")
+	private EmployeeBankDetails employeeBankDetails;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "employeePrimaryInfo")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "employeePrimaryInfo")
 	private List<EmployeeContactDetails> employeeContactDetails;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "employeePrimaryInfo")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "employeePrimaryInfo")
 	private List<EmployeeEducationDetails> employeeEducationDetails;
 	
-	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "employeePrimaryInfo")
+	@OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "employeePrimaryInfo")
 	private List<EmployeeExperienceDetails> employeeExperienceDetails;
 	
-	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.EAGER,mappedBy = "employeePrimaryInfos")
+	@ManyToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy = "employeePrimaryInfos")
 	private List<EmployeeTechnicalSkills> employeeTechnicalSkills;
 	
 	@OneToOne(fetch = FetchType.LAZY,cascade = CascadeType.ALL,mappedBy = "employeePrimaryInfo")

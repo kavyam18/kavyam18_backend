@@ -1,6 +1,5 @@
 package com.excel.lms.entity;
 
-import java.time.LocalDate;
 import java.util.List;
 
 import jakarta.persistence.CascadeType;
@@ -13,6 +12,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -22,13 +22,13 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
+@Builder
 @Table(name = "employee_technical_skills_info")
 public class EmployeeTechnicalSkills {
 
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private String technicalId;
+	private Integer technicalId;
 	
 	@Column(name = "skillType")
 	private String skillType;
@@ -39,6 +39,6 @@ public class EmployeeTechnicalSkills {
 	@Column(name = "skillRating")
 	private String skillRating;
 	
-	@ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+	@ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
 	private List<EmployeePrimaryInfo> employeePrimaryInfos;
 }

@@ -2,7 +2,6 @@ package com.excel.lms.dto;
 
 import com.excel.lms.enums.AccountType;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -17,6 +16,8 @@ import lombok.Setter;
 public class BankDTO {
 
     private String bankId;
+
+	private String employeeId;
 
 	private Integer accountNo;
 

@@ -18,6 +18,8 @@ public class ExperienceDTO {
 
     private String experienceId;
 
+	private String employeeId;
+
 	private String companyName;
 	
 	private Integer yearOfExperience;

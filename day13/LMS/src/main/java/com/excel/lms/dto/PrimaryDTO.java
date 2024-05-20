@@ -6,7 +6,6 @@ import com.excel.lms.enums.EmployeeStatus;
 import com.excel.lms.enums.Gender;
 import com.excel.lms.enums.Nationality;
 
-import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,8 +19,9 @@ import lombok.Setter;
 @Builder
 public class PrimaryDTO {
 
-
-	private String primaryId;
+	private String employeeId;
+	
+	private Integer primaryId;
 	
 	private String employeeName;
 	
@@ -40,4 +40,6 @@ public class PrimaryDTO {
 	private Nationality nationality;
 	
 	private EmployeeStatus employeeStatus;
+
+	
 }
